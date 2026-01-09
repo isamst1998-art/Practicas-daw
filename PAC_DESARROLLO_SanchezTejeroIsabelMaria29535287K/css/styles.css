@@ -1,0 +1,36 @@
+/* Recuadro del método de pago */
+.payment-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    border: 2px solid #ddd; /* Borde del recuadro */
+    border-radius: 10px; /* Esquinas redondeadas */
+    background-color: #f9f9f9; /* Color de fondo */
+    max-width: 500px; /* Ancho máximo */
+    margin: auto; /* Para centrar */
+    text-align: center;
+}
+h1,h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/* Estilos de las imágenes de métodos de pago */
+.payment-box label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.payment-box img {
+    width: 80px;
+    height: auto;
+    margin-top: 5px;
+    transition: transform 0.3s ease;
+}
+
+.payment-box img:hover {
+    transform: scale(1.1);
+}

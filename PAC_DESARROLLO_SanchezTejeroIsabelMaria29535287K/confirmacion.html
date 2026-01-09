@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de Compra</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .confirmation-box {
+            background: white;
+            width: 50%;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .details {
+            font-size: 18px;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+
+        .confirm-button {
+            text-align: center;
+        }
+
+        .confirm-button button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .confirm-button button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="confirmation-box">
+        <h2>Confirmación de Compra</h2>
+        <p class="details"><strong>Nombre:</strong> <span id="nombre"></span></p>
+        <p class="details"><strong>Fecha del Concierto:</strong> <span id="fecha"></span></p>
+        <p class="details"><strong>Cantidad de Entradas:</strong> <span id="cantidad"></span></p>
+        <p class="details"><strong>Categoría:</strong> <span id="categoria"></span></p>
+        <p class="details"><strong>Método de Pago:</strong> <span id="pago"></span></p>
+
+        <div class="confirm-button">
+            <button onclick="finalizarCompra()">Aceptar y Finalizar Compra</button>
+        </div>
+    </div>
+
+    <script>
+        // Función para obtener parámetros de la URL
+        function obtenerParametro(nombre) {
+            const params = new URLSearchParams(window.location.search);
+            return params.get(nombre);
+        }
+
+        // Cargar los valores en la página
+        document.getElementById('nombre').innerText = obtenerParametro('nombre');
+        document.getElementById('fecha').innerText = obtenerParametro('fecha');
+        document.getElementById('cantidad').innerText = obtenerParametro('cantidad');
+        document.getElementById('categoria').innerText = obtenerParametro('categoria');
+        document.getElementById('pago').innerText = obtenerParametro('pago');
+
+        // Función para finalizar la compra (simulación)
+        function finalizarCompra() {
+            alert("¡Compra completada con éxito! Recibirás un correo con los detalles.");
+            window.location.href = "index.html"; // Redirigir a la página principal
+        }
+    </script>
+
+</body>
+</html>

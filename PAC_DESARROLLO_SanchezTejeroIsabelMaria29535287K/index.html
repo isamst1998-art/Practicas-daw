@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portada RELS B y Métodos de Pago</title>
+    <style>
+        body {
+            font-family: Calibri;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f6a9;
+        }
+
+        /* Estilos de la seccion principal */
+        .hero {
+            text-align: center;
+            padding: 50px;
+        }
+
+        .hero img {
+            width: 25%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgb(251, 254, 254);
+        }
+
+        .description {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #010407;
+            font-weight: bold;
+        }
+
+        .group-info {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #010707;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+
+               /* Sección de conciertos */
+               .concert-table {
+            width: 60%;
+            margin: 30px auto;
+            border-collapse: collapse;
+        }
+
+        .concert-table th, .concert-table td {
+            padding: 12px;
+            border: 1px solid #06000000;
+        }
+
+        .concert-table th {
+            background-color: #f5f4f4;
+            color: rgb(5, 0, 0);
+        }
+
+        .concert-table tr:nth-child(even) {
+            background-color: #c0bebef6;
+        }
+
+        .concert-table tr:nth-child(odd) {
+            background-color: #f9f6f6;
+        }
+
+        /* Formulario */
+        .ticket-form {
+            background: white;
+            width: 50%;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 3px 3px 15px rgb(244, 240, 240);
+            text-align: left;
+        }
+
+        .ticket-form h3 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            width: 40%;
+        }
+
+        .form-group select, .form-group input {
+            width: 55%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Métodos de pago */
+        .payment-box {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .payment-box label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .payment-box img {
+            width: 60px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgb(250, 246, 246);
+        } 
+        #Bizum {
+            width: 80px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgb(250, 246, 246);
+        }
+
+        /* Checkbox */
+        .terms {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .terms input {
+            margin-right: 10px;
+        }
+
+        /* Botón de confirmación */
+        .confirm-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .confirm-button button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .confirm-button button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sección de la imagen de RELS B -->
+    <section class="hero">
+        <img src="img/portada.webp" alt="RELS B">
+        <p class="description">RELS B</p>
+        <p class="group-info">
+            Más conocido por su nombre artístico Rels B, es un cantante, compositor y productor musical 
+            español de rhythm and blues, dancehall, pop latino, hip hop y reguetón. Con nueve producciones 
+            musicales publicadas, es considerado como uno de los mayores exponentes de música urbana de España.
+        </p>
+    </section>
+
+    <!-- Tabla de Fechas de Conciertos -->
+    <h2>Próximos Conciertos</h2>
+    <table class="concert-table">
+        <tr>
+            <th>Ciudad</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Precio</th>
+        </tr>
+        <tr>
+            <td>Madrid</td>
+            <td>10/05/2025</td>
+            <td>21:00</td>
+            <td>€50</td>
+        </tr>
+        <tr>
+            <td>Barcelona</td>
+            <td>15/05/2025</td>
+            <td>20:30</td>
+            <td>€55</td>
+        </tr>
+        <tr>
+            <td>Valencia</td>
+            <td>20/05/2025</td>
+            <td>22:00</td>
+            <td>€45</td>
+        </tr>
+    </table>
+
+    <!-- Formulario de Compra -->
+    <div class="ticket-form">
+        <h3>Compra tu Entrada</h3>
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" placeholder="Tu Nombre">
+        </div>
+        <div class="form-group">
+            <label for="fecha">Fecha del Concierto:</label>
+            <select id="fecha">
+                <option value="Madrid - 10/05/2025">Madrid - 10/05/2025</option>
+                <option value="Barcelona - 15/05/2025">Barcelona - 15/05/2025</option>
+                <option value="Valencia - 20/05/2025">Valencia - 20/05/2025</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="cantidad">Cantidad de Entradas:</label>
+            <input type="number" id="cantidad" min="1" max="10" value="1">
+        </div>
+        <div class="form-group">
+            <label for="categoria">Categoría:</label>
+            <select id="categoria">
+                <option value="general">General</option>
+                <option value="vip">VIP</option>
+                <option value="front-row">Front Row</option>
+                <option value="backstage">Backstage Experience</option>
+            </select>
+        </div>
+
+    <!-- Métodos de Pago -->
+    <h3>Selecciona tu Método de Pago</h3>
+    <div class="payment-box">
+        <label>
+            <input type="radio" name="pago" value="Bizum" required>
+            <img id="Bizum" src="img/bizum.jpg" alt="Bizum">
+            <span>Bizum</span>
+        </label>
+        <label>
+            <input type="radio" name="pago" value="PayPal">
+            <img src="img/paypal.png"PayPal">
+            <span>PayPal</span>
+        </label>
+        <label>
+            <input type="radio" name="pago" value="Visa">
+            <img src="img/visa.png" alt="Visa">
+            <span>Visa</span>
+        </label>
+        <label>
+            <input type="radio" name="pago" value="MasterCard">
+            <img src="img/master.png" alt="MasterCard">
+            <span>MasterCard</span>
+        </label>
+    </div>
+
+ <!-- Checkbox de términos y condiciones -->
+ <div class="terms">
+    <input type="checkbox" id="terms">
+    <label for="terms">Acepto los términos y condiciones</label>
+</div>
+
+<!-- Botón de Confirmación -->
+<div class="confirm-button">
+    <button onclick="confirmarCompra()">Confirmar Compra</button>
+</div>
+</div>
+
+<script>
+function confirmarCompra() {
+    const nombre = document.getElementById('nombre').value;
+    const fecha = document.getElementById('fecha').value;
+    const cantidad = document.getElementById('cantidad').value;
+    const categoria = document.getElementById('categoria').value;
+    const metodoSeleccionado = document.querySelector('input[name="pago"]:checked');
+    const termsChecked = document.getElementById('terms').checked;
+
+    if (!nombre) {
+        alert("Por favor, ingresa tu nombre.");
+        return;
+    }
+
+    if (!metodoSeleccionado) {
+        alert("Por favor, selecciona un método de pago.");
+        return;
+    }
+
+    if (!termsChecked) {
+        alert("Debes aceptar los términos y condiciones.");
+        return;
+    }
+
+    window.location.href = `confirmacion.html?nombre=${nombre}&fecha=${fecha}&cantidad=${cantidad}&categoria=${categoria}&pago=${metodoSeleccionado.value}`;
+}
+</script>
+
+</body>
+</html>
