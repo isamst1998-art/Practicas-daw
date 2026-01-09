@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprueba Pecera</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <script src="js/crypto-js.min.js"></script>
+    <script src="js/log.js"></script>
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        h1 {
+            color: #007acc;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .check {
+            color: green;
+        }
+
+        .cross {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Verificación del archivo Pecera</h1>
+        <input type="file" id="fileInput" accept=".pac" />
+        <table id="verificationTable">
+            <thead>
+                <tr>
+                    <th>Verificación</th>
+                    <th>Resultado</th>
+                </tr>
+            </thead>
+            <tbody id="verificationBody">
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const _0xabc = new Log("Pecera");
+        const _0xdef = {
+            a: "Nombre Alumno:",
+            b: "Hora:",
+            c: "Navegador:",
+            d: "Pez1: Rubén y movimiento horizontal",
+            e: "Pez2: Laura y movimiento zigzag",
+            f: "Pez3: Tamara y movimiento burbujaCascada",
+            g: "Pez4: Tever y movimiento horizontal",
+            h: "Pez5: Caballito y movimiento zigzag"
+        };
+    
+        document.getElementById('fileInput').addEventListener('change', function (_0x123) {
+            const _0x456 = _0x123.target.files[0];
+            if (_0x456) {
+                const _0x789 = new FileReader();
+                _0x789.onload = function (_0xghi) {
+                    const _0xjkl = _0xghi.target.result;
+                    const _0x012 = _0xabc.decrypt(_0xjkl, "123456789");
+                    _0x345(_0x012);
+                };
+                _0x789.readAsText(_0x456);
+            }
+        });
+    
+        function _0x345(_0x678) {
+            const _0x901 = _0x678.split('\n');
+            const _0x234 = {};
+    
+            for (const [_0x567, _0x890] of Object.entries(_0xdef)) {
+                _0x234[_0x567] = _0x901.find(_0x012 => _0x012.includes(_0x890)) || 'No encontrado';
+            }
+    
+            const _0x345 = document.getElementById('verificationBody');
+            _0x345.innerHTML = '';
+    
+            for (const [_0x678, _0x901] of Object.entries(_0x234)) {
+                const _0x567 = document.createElement('tr');
+                const _0x890 = document.createElement('td');
+                const _0x012 = document.createElement('td');
+    
+                _0x890.textContent = _0xdef[_0x678];
+                _0x012.textContent = _0x901 !== 'No encontrado' ? _0x901 : '❌ No encontrado';
+                _0x012.classList.add(_0x901 !== 'No encontrado' ? 'check' : 'cross');
+    
+                _0x567.appendChild(_0x890);
+                _0x567.appendChild(_0x012);
+                _0x345.appendChild(_0x567);
+            }
+        }
+    </script>
+    
+</body>
+
+</html>
