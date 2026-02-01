@@ -7,7 +7,7 @@ Desarrollo de Aplicaciones Web (DAW).
 - HTML
 - CSS
 - JavaScript
-- 
+- PHP
 ## Objetivo
 Aplicar los conocimientos adquiridos en el ciclo formativo y seguir
 aprendiendo en un entorno profesional.
